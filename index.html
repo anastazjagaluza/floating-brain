@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Floating brain</title>
+</head>
+<style>
+body{
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+    --skill1-background-color: blue;
+    --skill2-background-color: orange;
+    --skill3-background-color: red;
+    --skill4-background-color: green;
+    --skill5-background-color: purple;
+
+}
+#wrapper {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 100vw;
+    height: 100%;
+    align-items: center;
+    justify-items: center;
+}
+#parent{
+    width: 50%;
+}
+p {
+    font-family: "Dosis", sans-serif;
+    font-size: 2rem;
+}
+</style>
+<body>
+    <div id="wrapper">
+    <div id="parent"></div>
+    <p>Skills description</p>
+    </div>
+    <script type="module">
+     import { floatingBrain } from "./lib/index.js";
+     let mySkills = {
+            sleeping: "I sleep",
+            eating: "I eat",
+            running: "I don't run",
+            jumping: "I can jump",
+            crying: "I cri"
+        };
+let placeholder =  document.querySelector("p");
+let parent = document.querySelector("#parent");
+let brain = floatingBrain(mySkills, "Check out my skills", placeholder, "40vw", parent);
+    </script>
+</body>
+</html>
